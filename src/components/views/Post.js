@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { PostEdit } from "../PostEdit";
-import { deletePost, getPost } from "../../helpers/getPosts";
+import { getPost } from "../../helpers/getPosts";
+import { Title } from "../Title";
+import { Buttons } from "../actions/Buttons";
+import { Body } from "../Body";
 
 export const Post = () => {
   const { postId } = useParams();
@@ -12,34 +14,20 @@ export const Post = () => {
     getPost(postId).then(setPost);
   }, [postId]);
 
+  const handleEdit = (e, id) => {
+    e.preventDefault();
+    setSelect(id);
+  };
+
   return (
     <>
       <div className="post__container container">
-        <h1 className="post__h1">{post.title}</h1>
-        <h2 className="post__h2">{post.body}</h2>
+        <Title title={post.title} />
+        <Body body={post.body} />
         <Link to={"/"} className="link">
           Atrás
         </Link>
-        <button
-          className="btn bg-green"
-          onClick={(e) => {
-            e.preventDefault();
-
-            setSelect(post.id);
-          }}
-        >
-          editar
-        </button>
-        {post.id === select && <PostEdit postId={select} />}
-        <button
-          className="btn bg-red"
-          onClick={(e) => {
-            e.preventDefault();
-            deletePost(post.id);
-          }}
-        >
-          eliminar
-        </button>
+        <Buttons id={post.id} handleEdit={handleEdit} select={select} />
       </div>
     </>
   );

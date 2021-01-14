@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useForm } from "../hooks/useForm";
 import { createPost } from "../helpers/getPosts";
+import { Body } from "./Body";
+import { Title } from "./Title";
 
 export const PostCreate = () => {
   const [create, setCreate] = useState(false);
@@ -53,8 +55,8 @@ export const PostCreate = () => {
       </form>
       {create && (
         <div className="post__container container">
-          <h1 className="post__h1">{post?.title}</h1>
-          <h2 className="post__h2">{post?.body}</h2>
+          <Title title={post?.title} />
+          <Body body={post?.body} />
           <Link to={"/"} className="link">
             Inicio
           </Link>

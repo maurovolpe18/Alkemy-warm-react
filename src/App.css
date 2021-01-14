@@ -1,38 +1,125 @@
-.App {
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+:root {
+  --color-principal: #ebf9ff;
+  --green: #58dda6;
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  font-size: 62.5%;
+  background-color: #fafafa;
+  font-family: "Encode Sans Semi Condensed", sans-serif;
+}
+.container {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.header {
+  background-color: #ebf9ff;
+  height: 30rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__h1 {
+  font-size: 4rem;
   text-align: center;
+  color: black;
+}
+.link__header {
+  text-decoration: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* POST */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (min-width: 768px) {
+  .posts__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.title__container {
+  height: 20rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+.post__h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.post__h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: justify;
+}
+.post__container {
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 3rem;
+}
+.link {
+  font-size: 2rem;
+  margin: 2rem 0;
+}
+.btn {
+  height: 6rem;
+  font-size: 3rem;
+  border-radius: 0.3rem;
+  margin: 1rem 0 1rem 0;
+  font-weight: 600;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  transition: 0.3s ease;
+}
+.btn:hover {
+  cursor: pointer;
+  filter: brightness(94%);
+  transition: 0.3s ease;
+}
+.bg-green {
+  background-color: var(--green);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.bg-red {
+  background-color: #a13927;
+  color: white;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.input,
+.textarea {
+  width: 100%;
+  height: 4rem;
+  margin: 2rem 0;
+  font-size: 2rem;
+}
+.textarea {
+  height: 20rem;
+}
+.post__edit-h2 {
+  font-size: 2.5rem;
+  margin-top: 2rem;
 }

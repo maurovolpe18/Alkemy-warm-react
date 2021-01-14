@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import { useForm } from "../routes/hooks/useForm";
-import { createPost } from "./helpers/getPosts";
+import { useForm } from "../hooks/useForm";
+import { createPost } from "../helpers/getPosts";
 
 export const PostCreate = () => {
   const [create, setCreate] = useState(false);

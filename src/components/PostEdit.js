@@ -1,7 +1,7 @@
 import React from "react";
 import Swal from "sweetalert2";
-import { useForm } from "../routes/hooks/useForm";
-import { editPost } from "./helpers/getPosts";
+import { useForm } from "../hooks/useForm";
+import { editPost } from "../helpers/getPosts";
 
 export const PostEdit = ({ postId }) => {
   const [formValues, handleInputChange] = useForm({

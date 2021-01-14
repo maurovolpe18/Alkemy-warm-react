@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { PostEdit } from "../PostEdit";
-import { deletePost, getPost } from "../helpers/getPosts";
+import { deletePost, getPost } from "../../helpers/getPosts";
 
 export const Post = () => {
   const { postId } = useParams();

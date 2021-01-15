@@ -1,7 +1,6 @@
 import React from "react";
 
 export const Title = ({ title }) => {
-  console.log(title);
   return (
     <div className="title__container">
       <h1 className="post__h1">{title}</h1>

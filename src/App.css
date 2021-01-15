@@ -46,7 +46,17 @@ body {
     column-gap: 2rem;
   }
 }
-
+.d-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 7rem;
+}
+.link__create {
+  text-align: center;
+  font-size: 4rem;
+}
 .title__container {
   height: 20rem;
   display: flex;
